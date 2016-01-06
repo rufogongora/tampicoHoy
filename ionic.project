@@ -1,0 +1,10 @@
+{
+  "name": "tampicoHoy",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://localhost:3000"
+    }
+  ]
+}

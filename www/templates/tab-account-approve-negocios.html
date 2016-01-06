@@ -1,0 +1,15 @@
+<ion-view view-title="Revisar Negocios">
+	<ion-content>
+		<div class="list">
+
+	    <a class="item item-thumbnail-left" ng-repeat="negocio in negocios" href="#/tab/dash/{{negocio.categoria}}/{{negocio._id}}">
+	      <img ng-src="{{negocio.logo}}" err-src="http://placehold.it/150x150">
+	      <h2>{{negocio.nombre}}</h2>
+	      <p>{{negocio.direccion}}, {{negocio.ciudad}}, {{negocio.estado}}</p>
+	      <hr>
+	      <p>{{negocio.descripcion}}</p>
+	    </a>
+
+		</div>
+	</ion-content>
+</ion-view>

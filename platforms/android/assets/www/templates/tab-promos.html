@@ -1,0 +1,38 @@
+<ion-view view-title="Promos">
+  <ion-content class="scroll-bg">
+  	<ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
+    </ion-refresher>  
+  	
+  	<div class="list">
+    <div class="card" ng-repeat="promo in promos">
+
+	  <div class="item item-avatar">
+	    <ng-src="{{promo.img}}" err-src="http://placehold.it/150x150">
+	    <h2>{{promo.name}}</h2>
+	    <h3><i>Por: {{promo.negocio.nombre}}</i></h3>
+	    <p>{{promo.start | date : 'longDate'}} - {{promo.end | date : 'longDate'}}</p>
+	  </div>
+	  <div class="item tabs tabs-secondary tabs-icon-left">
+	  
+	  <a class="tab-item" href="#" ng-click="shareAnywhere(promo)">
+	    <i class="icon ion-share"></i>
+	    Compartir
+	  </a>
+	  <a class="tab-item" ng-click="goTo(promo.negocio)">
+	    <i class="icon ion-ios-home"></i>
+	    Ver negocio
+	  </a>
+	  
+
+	  </div>
+	</div>
+
+	<div class="card" ng-show="promos.length == 0">
+      <div class="item item-icon-left item-text-wrap">
+      <i class="icon ion-sad-outline"></i>
+	    No hay resultados!
+	  </div>
+	</div>
+	</div>
+  </ion-content>
+</ion-view>

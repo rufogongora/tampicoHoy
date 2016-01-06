@@ -1,0 +1,70 @@
+/* Empty. Add your own CSS if you like */
+.scroll-bg{
+	/*background-color: #2c3e50;*/
+	background-image: url("../img/bg.png")
+}
+
+.custom-button{
+	height: 80px;
+	/*background: rgba(26, 188, 156,1.0);*/
+	color: rgba(236, 240, 241,1.0);
+}
+
+.negocio{
+	height: 100px;
+}
+
+.negocio h1{
+	color: black;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.active{
+	height: 150px;
+}
+
+.negocio-detail-background{
+	background-size: 100%;
+	text-align: center;
+	vertical-align: middle;
+}
+.negocio-detail-background h1{ 
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.negocio-detail-background p{
+	color:white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.negocio-detail-background img{
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.horario{
+	
+
+}
+
+.warning {
+	color : red;
+}
+
+
+#map {
+  width: 100%;
+  height: 100px;
+}
+
+.title {
+	text-align: center;
+	
+}
+
+
+.text-right {
+	text-align: right;
+}

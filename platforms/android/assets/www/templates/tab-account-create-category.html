@@ -1,0 +1,46 @@
+<ion-view view-title="Crear Categoria">
+	<ion-content>
+	<div class="list">
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Nombre</span>
+	    <input type="text" placeholder="Nombre" ng-model="categoria.name">
+	  </label>
+
+	  	  <div class="item item-divider">
+	  </div>
+	  <label class="item item-input item-select">
+	    <div class="input-label">
+	    	Icono
+	    </div>
+	    <select name="seleccionarIcono" ng-model="categoria.icon" ng-change="update()">
+	    	<option ng-repeat="icon in iconos" value="{{icon.name}}">{{icon.name}}</option>
+	  	</select>
+	  </label>
+
+
+	   <div class="item item-icon-right">
+		    Selected icon : 
+		    <i class="icon" ng-class="categoria.icon"></i>
+		  </div>
+		
+
+		  <div class="padding">
+		  	<button class="button button-full button-positive" ng-click="create()">
+  			Crear Categoria
+			</button>
+		  </div>
+
+	 <div class="card" data-ng-show="err">
+	  <div class="item item-text-wrap warning">
+	    {{err}}
+	  </div>
+	</div>
+
+		  
+		</div>
+	
+
+
+
+	</ion-content>
+</ion-view>

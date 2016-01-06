@@ -1,0 +1,52 @@
+  <ion-view view-title="{{category.name}}">
+  <ion-content class="scroll-bg">
+  <!--     <ion-list> -->
+  <!-- If there are no results -->
+    <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
+    </ion-refresher>  
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input type="search" ng-model="search" placeholder="Buscar">
+      </label>
+      <button class="button button-clear" ng-click="search = ''">
+        Cancel
+      </button>
+    </div>
+
+
+
+    <div class="list card" ng-repeat="negocio in negociosToShow=(negocios | filter:search | orderBy:important:true)">
+      
+        <div class="item item-avatar">
+          <img ng-src="{{negocio.logo}}" err-src="http://placehold.it/100x100">
+          <h2>{{negocio.mensaje}}</h2>
+          <p>{{negocio.nombre}}</p>
+        </div>
+
+        <div class="item item-image">
+          <img ng-show="negocio.important" ng-src="{{negocio.img}}" err-src="http://placehold.it/355x190">
+        </div>
+
+
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <a class="tab-item" href="#/tab/dash/{{category._id}}/{{negocio._id}}">
+      <i class="icon {{category.icon}}"></i>
+      Leer más
+    </a>
+    <a class="tab-item" href="#" ng-click="like(negocio)">
+      <i class="icon" ng-class="{ 'ion-ios-heart-outline' : (user.likes.indexOf(negocio._id) < 0 || !user), 'ion-ios-heart' : user.likes.indexOf(negocio._id) >= 0}"></i>
+      {{negocio.likes}}
+    </a>
+  </div>
+
+    </div>
+    <div class="card" ng-show="!negociosToShow.length">
+      <div class="item item-icon-left item-text-wrap">
+      <i class="icon ion-sad-outline"></i>
+    No hay resultados!
+  </div>
+    </div>
+
+      </ion-content>
+    </ion-view>

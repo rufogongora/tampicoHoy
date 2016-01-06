@@ -1,0 +1,46 @@
+  <ion-view view-title="{{negocio.nombre}}">
+  <!-- <ion-content class="scroll-bg"> -->
+  <ion-content>
+
+  <button class="button button-block button-balanced" ng-show="!negocio.approved" ng-click="approveNegocio()">
+    Aprobar
+  </button>
+  <button class="button button-block button-assertive" ng-show="!negocio.approved" ng-click="noApprove()">
+  No aprobar
+  </button>
+  <div class="negocio-detail-background" style="background-image: url('{{negocio.img}}')">
+    <h1> {{negocio.nombre}} </h1>
+    <p> {{negocio.mensaje}} </p>
+    <img class="logo" ng-src="{{negocio.logo}}" err-src="http://placehold.it/150x150"></div>
+
+  </div>
+  <a class="item item-icon-left item-icon-right">
+    <i class="icon ion-clock"></i>
+    <h2>{{negocio.open}} - {{negocio.close}}</h2>
+    <p>{{negocio.direccion}}, {{negocio.ciudad}} {{negocio.estado}}</p>
+    <i class="icon ion-ios-heart-outline" href="#"></i>
+  </a>
+
+
+
+  <div id="map" data-tap-disabled="true"></div>
+
+
+  <div class="descripcion">
+    <div class="row">
+      <div class="col col-10"></div>
+      <div class="col"><h2>Descripcion</h2></div>
+      <div class="col col-10"></div>
+    </div>
+
+    <div class="contenido">
+      <div class="row">
+        <div class="col col-5"></div>
+        <div class="col col-90">{{negocio.descripcion}}</div>
+        <div class="col col-5"></div>
+      </div>
+    </div>
+  </div>
+
+      </ion-content>
+    </ion-view>

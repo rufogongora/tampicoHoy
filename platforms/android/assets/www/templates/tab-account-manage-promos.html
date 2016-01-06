@@ -1,0 +1,46 @@
+<ion-view view-title="Promociones">
+<ion-content>
+
+
+	<h1 class="padding" ng-show="promos.length > 0">Lista de promos: {{promos.length}}</h1>
+	<ion-list show-delete="shouldShowDelete"
+	          show-reorder="shouldShowReorder"
+	          can-swipe="listCanSwipe">
+
+		    <ion-item class="item item-avatar" ng-repeat="promo in promos">
+		      <img src="{{promo.img}}">
+		      <h2>{{promo.name}}</h2>
+		      <p>{{promo.start}} - {{promo.end}}</p>
+		    <ion-option-button class="button-assertive"
+	                   ng-click="delete(promo)">
+		      Delete
+		    </ion-option-button>
+		    </ion-item>
+	</ion-list>
+
+	<h1 class="padding">Crear promocion para: {{negocio.nombre}}</h1>
+	<div class="list padding">
+	<label class="item item-input item-floating-label">
+	<span class="input-label">Descripcion</span>
+	<input type="text" ng-model="newPromo.name" placeholder="Descripcion">
+	</label>
+	<label class="item item-input item-floating-label">
+	<span class="input-label">Fecha de inicio</span>
+	<input type="date" ng-model="newPromo.start" placeholder="Descripcion">
+	</label>
+	<label class="item item-input item-floating-label">
+	<span class="input-label">Fecha de cierre</span>
+	<input type="date" ng-model="newPromo.end" placeholder="Descripcion">
+	</label>
+	<label class="item item-input item-floating-label">
+	<span class="input-label">Inserte imagen</span>
+	<input type="text" ng-model="newPromo.img" placeholder="Inserte imagen">
+	</label>
+	<button class="button button-block button-balanced" ng-click="crearPromo(negocio)">
+	  Crear promo
+	</button>
+	</div>
+
+
+</ion-content>
+</ion-view>	

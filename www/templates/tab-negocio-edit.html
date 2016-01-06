@@ -1,0 +1,127 @@
+	<ion-view view-title="Editar {{negocio.nombre}}">
+		<ion-content>
+			<div class="list">
+
+		  <label class="item item-input item-floating-label">
+		   <span class="input-label">Mensaje del dia</span>
+		    <input type="text" placeholder="Mensaje del dia" ng-model="negocio.mensaje">
+		  </label>
+		 <div class="item item-divider">
+		    
+		  </div>
+		  <label class="item item-input item-floating-label">
+		   <span class="input-label">Nombre</span>
+		    <input type="text" placeholder="Nombre" ng-model="negocio.nombre">
+		  </label>
+
+	 	
+
+		  <label class="item item-input item-floating-label">
+		   	<span class="input-label">Descripcion</span>
+		    <textarea placeholder="Descripcion" ng-model="negocio.descripcion"></textarea>
+		  </label>
+		 
+		 <div class="item item-divider">
+	    
+	  </div>
+
+		  <label class="item item-input item-select">
+		    <div class="input-label">
+		    	Estado
+		    </div>
+		    <select name="seleccionarEstado" ng-model="negocio.estado">
+		    	<option ng-repeat="estado in estados" value="{{estado.nombre}}">{{estado.nombre}}</option>
+		  	</select>
+		  </label>
+
+		  <label class="item item-input item-select">
+		    <div class="input-label">
+		    	Ciudad
+		    </div>
+		    <select name="seleccionarCiudad" ng-model="selectedCity">
+		    	<option ng-repeat="ciudad in selectedEstado.ciudades" value="{{ciudad.nombre}}">{{ciudad.nombre}}</option>
+		  	</select>
+		  </label>
+		<div class="item item-divider">  
+		</div>
+
+		<label class="item item-input item-floating-label">
+		   <span class="input-label">Direccion</span>
+		    <input type="text" placeholder="Direccion" ng-model="negocio.direccion">
+		  </label>
+
+		  <label class="item item-input item-floating-label">
+		   <span class="input-label">Logo URL</span>
+		    <input type="text" placeholder="Logo URL" ng-model="negocio.logo">
+		  </label>
+
+		  <label class="item item-input item-floating-label">
+		   <span class="input-label">Imagen</span>
+		    <input type="text" placeholder="Imagen" ng-model="negocio.img">
+		  </label>
+
+		<div class="item item-divider">  
+		</div>
+
+		<div class="item item-divider">  
+			Tiempo de abertura
+		</div>
+		<div class="row">
+			<div class="col">
+		    <select name="seleccionarHoraAbrir" ng-model="sele.op">
+		    	<option ng-repeat="hora in horas" value="{{hora.hora}}">{{hora.hora}}</option>
+		  	</select>
+		  	</div>
+	  	<div class="col">
+	  		   <select name="seleccionarHoraAbrirPm" ng-model="sele.openPm">
+		    		<option>A.M</option>
+		    		<option>P.M</option>
+		  		</select>
+		  	</div>
+		</div>
+
+		<div class="item item-divider">  
+			Tiempo de cierre
+		</div>
+
+		<div class="row">
+			<div class="col">
+			 <select name="seleccionarHoraCerrar" ng-model="sele.cl">
+			    	<option ng-repeat="hora in horas" value="{{hora.hora}}">{{hora.hora}}</option>
+			  	</select>
+		  	</div>
+			<div class="col">
+	  		   <select name="seleccionarHoraAbrirPm" ng-model="sele.closePm">
+		    		<option>A.M</option>
+		    		<option>P.M</option>
+		  		</select>
+			</div>
+		</div>
+
+		<div class="item item-divider">  
+
+		</div>
+
+		  <label class="item item-input item-select">
+		    <div class="input-label">
+		    	Categoria
+		    </div>
+		    <select name="seleccionarEstado" ng-model="negocio.categoria">
+		    	<option ng-repeat="category in categories" value="{{category._id}}">{{category.name}}</option>
+		  	</select>
+		  </label>
+
+	  	<button class="button button-full button-positive" ng-click="update()">
+	  		Actualizar
+		</button>
+
+
+		 <div class="card" data-ng-show="err">
+		  <div class="item item-text-wrap warning">
+		    {{err}}
+		  </div>
+		</div>
+
+			</div>
+		</ion-content>
+	</ion-view>

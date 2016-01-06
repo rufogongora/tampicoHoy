@@ -1,0 +1,37 @@
+  <ion-view view-title="Ubicacion">
+  <ion-content>
+  <div class = "row">
+  	<div class = "col col-1"></div>
+  	<div class = "col col-90">
+  		<h1 class="title">Selecciona tu ubicacion</h1>
+
+  	</div>
+  	<div class = "col col-1"></div>
+  </div>
+
+  <div class="list padding">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Estado
+    </div>
+    <select ng-model="location.estado">
+      <option ng-repeat="estado in estados" value="{{estado.nombre}}">{{estado.nombre}}</option>
+    </select>
+  </label>
+	<label class="item item-input item-select" ng-show="location.estado">
+    <div class="input-label">
+      Ciudad
+    </div>
+    <select ng-model="location.ciudad">
+      <option ng-repeat="ciudad in estado.ciudades" value="{{ciudad.nombre}}">{{ciudad.nombre}} </option>
+    </select>
+  </label>
+
+   <button class="item button button-block button-calm" ng-click="entrar()" ng-show="location.ciudad">
+	  Ingresar
+	</button>
+
+</div>
+  </ion-content>
+  </ion-view>
